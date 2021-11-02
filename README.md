@@ -3,7 +3,8 @@
 
 The files in this repository were used to configure the network depicted below. 
 
-Diagram location: [Azure Diagram](https://github.com/kellyclemmensen/CyberSecurityBootcamp-Project1/blob/main/Project1-AzureBuildOut.png)
+Diagram location: [Azure Diagram](https://github.com/kellyclemmensen/CXSProj1/blob/main/Diagrams/Project1-AzureBuildOut.png)
+
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook may be used to install only certain pieces of it, such as Filebeat.
 
