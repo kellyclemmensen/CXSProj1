@@ -119,7 +119,7 @@ Tasks performed:
 - Updated the [WebServers] section of the configuration file. 
   - Add the IP address of each Web server. Appended "ansible_python_interpreter=/usr/bin/python3" next to the IP address of each Web server.
   - [Screen shot of Ansible hosts file WebServers section](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleHosts.png)
-- Verified that the Ansible "controller" can communicate and access each Web server without issue.[Ansible Success](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsiblePing.png)
+- Verified that the Ansible "controller" can communicate and access each Web server without issue. [ Ansible Success](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsiblePing.png)
 
 Next I created a YAML playbook that was used to push out the Docker Web VM to each of the Web servers. This YML playbook performed a few tasks. 
 - Installed the Docker.IO on each Web server
