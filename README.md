@@ -53,17 +53,13 @@ The Jump-Provisioner virtual machine's role/function is for administration of th
 
 The 3 Web servers will be used to host the DVWA web site. These servers will be setup in an availability set and a load balancer will be setup in front of these web servers to distribute traffic to each web server virtual machine. 
 
-
-
 #### Network Security Groups | Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the Jump-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following external IP addresses:
-- 73.45.45.20
+Only the Jump-Provisioner machine can accept connections from the Internet. 
 
-Machines within the network can only be accessed by the Ansible Controller.
-- Ansible Controller running on the Jump-Provisioner machine @ 10.2.0.4
+The load balancer in front of the Web hosts, is configured with a public IP address.
 
 A summary of the access policies in place can be found in the table below.
 
@@ -73,7 +69,7 @@ A summary of the access policies in place can be found in the table below.
 | Elk-01  | Yes  | 73.45.45.20  | 5601  | 
 | Web Servers | Yes | 73.45.45.20 | 80 |
 
-
+#### Azure Diagram
 Diagram location: [Azure Diagram](https://github.com/kellyclemmensen/CXSProj1/blob/main/Diagrams/Project1-AzureBuildOut.png)
 
 
@@ -88,6 +84,8 @@ This document contains the following details:
 ### Description of the Topology
 
 
+Web hosts within the network can only be accessed by the Ansible Controller.
+- Ansible Controller running on the Jump-Provisioner machine @ 10.2.0.4
 
 
 
