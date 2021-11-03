@@ -28,11 +28,7 @@ The table below lists Azure components deployed in the Azure environment to supp
 | Subnets     |  A subnet is a range of IP addresses in the virtual network.      | 
 | Network Security Groups     |  Network Security Groups provide control over network traffic flowing in and out of your services running in Azure.     | 
 |  Virtual Machines    |    On Demand, scalable computing resources   | 
-|  Load Balancer   |    Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- Load balancers serve multiple purposes. 
-  - At their core, LBs distribute traffic between configured backend workloads. 
-  - They verify health state of backend workloads and make sure they are online before sending traffic
-- From the aspect of security, LBs prevent access directly to backend resource, adding a layer of control over access to the backend resource. | 
+|  Load Balancer   |    Load balancing ensures that the application will be highly available, in addition to restricting access to the network. Load balancers serve multiple purposes. At their core, LBs distribute traffic between configured backend workloads. They verify health state of backend workloads and make sure they are online before sending traffic. From the aspect of security, LBs prevent access directly to backend resource, adding a layer of control over access to the backend resource. | 
 |  Public IP Address   |    Public IP addresses enable Azure resources to communicate to Internet and public-facing Azure services | 
 |  Availability Set   |    An availability set is a logical grouping of VMs that allows Azure to understand how your application is built to provide for redundancy and availability.   | 
 
