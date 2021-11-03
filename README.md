@@ -95,11 +95,41 @@ Tasks performed from the Jump-Provisioner server to install the Docker.IO.
 Tasks performed from the Jump-Provisioner server to setup the Ansible container.
 - From the Jump-Provisioner server, run command "sudo docker pull cyberxsecurity/ansible". This command pulls the Ansible container down to the local Docker service
 - Launch the Ansible container and connect to it
-  - docker run -ti cyberxsecurity/ansible:latest bash. Note: This command creates an instance of Ansible container. It only needs to be run once.
+  - Command - "sudo docker run -ti cyberxsecurity/ansible:latest bash". Note: This command creates an instance of Ansible container. It only needs to be run once.
   - Ansible container does not run after a server reboot. 
     - Command - "sudo docker start CONTAINER_NAME" will start the container
     - Command - "sudo docker attach CONTAINER_NAME" will attach to the running Ansible container.
 - Verify the Ansible container is running. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleContainerRunning.png)
+
+In order for the Ansible container to have the ability to push out Docker and the DVWA container, SSH keys need to be generated from the Ansible container and used to update each of the Web server virtual machines from the Azure console. 
+
+These are the tasks performed to replace the existing SSH keys
+- From the Jump-Provisioner server, generate new SSH keys
+- Copy the public Key detail from the generated SSH Key
+- In the Azure portal, navigate to the virtual machine > Reset Password pane. Update the SSH public key information with the new SSH key information you created. Update the virtual machine. Repeat SSH replace tasks for each Web Server. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AzureSSKey.png)
+- Verify SSH access to each Web server from the Ansible container. 
+
+#### DVWA Web VM with Docker Installation
+
+Ansible and the Web Servers are now ready to install the DVWA Docker container.
+
+I updated the /etc/ansible/hosts configuration file to add/update the WebServers section and include the IP addresses of the Web server hosts. 
+Tasks performed: 
+- Edited /etc/ansible/hosts
+- Updated the [WebServers] section of the configuration file. 
+  - Add the IP address of each Web server. Appended "ansible_python_interpreter=/usr/bin/python3" next to the IP address of each Web server.
+  - [Screen shot of Ansible hosts file WebServers section](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleHosts.png)
+- Verified that the Ansible "controller" can communicate and access each Web server without issue.[Ansible Success](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsiblePing.png)
+
+Next I created a YAML playbook that was used to push out the Docker Web VM to each of the Web servers. This YML playbook performed a few tasks. 
+- Installed the Docker.IO on each Web server
+- Installed Python on each server
+- Downloaded and installed Docker Web VM container
+  - Published the Docker Web VM on port 80
+- Set the Docker service to enabled. 
+- [Pentest.yml Playbook file](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/pentest.yml)
+
+
 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook may be used to install only certain pieces of it, such as Filebeat.
