@@ -90,7 +90,7 @@ Tasks performed from the Jump-Provisioner server to install the Docker.IO.
 - Install Docker.IO 
   - run command "sudo apt update"
   - run command "sudo apt install docker.io"
-  - Verify the Docker service is running. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleServicerunning.png)
+  - Verify the Docker service is running. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleServiceRunning.png)
 
 Tasks performed from the Jump-Provisioner server to setup the Ansible container.
 - From the Jump-Provisioner server, run command "sudo docker pull cyberxsecurity/ansible". This command pulls the Ansible container down to the local Docker service
