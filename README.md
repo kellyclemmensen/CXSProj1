@@ -10,6 +10,11 @@ This document describes the environment built and tasks completed, in sequence t
 This environment was built using Microsoft Azure cloud hosting. A trial account with a $200 credit was opened and used for this project. 
 
 The table below lists Azure components deployed in the Azure environment and their descriptions. 
+| Azure Component     | Description |
+|----------|----------|------------|------------------|
+| Virtual Network | Azure Virtual Network (VNet) is the fundamental building block for your private network in Azure. VNet enables many types of Azure resources to securely communicate with each other, the internet, and on-premises networks. |
+| Subnets     |  A subnet is a range of IP addresses in the virtual network.      | 
+| Network Security Groups     |  Network Security Groups provide control over network traffic flowing in and out of your services running in Azure.     | 
 
 Diagram location: [Azure Diagram](https://github.com/kellyclemmensen/CXSProj1/blob/main/Diagrams/Project1-AzureBuildOut.png)
 
