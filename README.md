@@ -1,11 +1,13 @@
 ## Document Topics
 - Automated ELK Stack Deployment
+  - Azure Build
+  - Access Policies
+  - DVWA Configuration
   - ELK Configuration
   - Beats in Use
   - Machines Being Monitored
 - Cybersecurity Bootcamp Scripts
 - Kibana Investigation Summary
-- Access Policies
 - How to Use the Ansible Build
 
 ## Automated ELK Stack Deployment
@@ -53,13 +55,11 @@ The Jump-Provisioner virtual machine's role/function is for administration of th
 
 The 3 Web servers will be used to host the DVWA web site. These servers will be setup in an availability set and a load balancer will be setup in front of these web servers to distribute traffic to each web server virtual machine. 
 
+The Elk server will be used to host the ELK stack. It is important that the size of the VM has at least 2vCPU and 4GB of memory. The ELK stack will not work with a virtual machine that has less than 4GB of memory.
+
 #### Network Security Groups | Access Policies
 
-The machines on the internal network are not exposed to the public Internet. 
-
-Only the Jump-Provisioner machine can accept connections from the Internet. 
-
-The load balancer in front of the Web hosts, is configured with a public IP address.
+The machines on the internal network are not exposed to the public Internet. Only the Jump-Provisioner machine can accept connections from the Internet. The load balancer in front of the Web hosts, is configured with a public IP address and access is restricted to a specific source and destination port.
 
 A summary of the access policies in place can be found in the table below.
 
