@@ -96,7 +96,7 @@ Tasks performed from the Jump-Provisioner server to setup the Ansible container.
 - From the Jump-Provisioner server, run command "sudo docker pull cyberxsecurity/ansible". This command pulls the Ansible container down to the local Docker service
 - Launch the Ansible container and connect to it
   - docker run -ti cyberxsecurity/ansible:latest bash. Note: This command creates an instance of Ansible container. It only needs to be run once. 
-- Verify the Ansible container is running. [Screen shot]((https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleContainerRunning.png)
+- Verify the Ansible container is running. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleContainerRunning.png)
 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook may be used to install only certain pieces of it, such as Filebeat.
