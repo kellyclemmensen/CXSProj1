@@ -35,13 +35,13 @@ The table below lists the virtual networks and subnets for each created to host 
 
 #### Virtual Machines
 The table below lists the virtual machines built, including roles and specifications of each. 
-| Name     | Role | IP Address | Operating System | vCPU | Memory | 
-|----------|----------|------------|------------------|------------------|------------------|
-| Jump-Provisioner | Gateway/Ansible Controller  | 10.2.0.4   | Linux  | 1 | 1GB | 
-| Web-01     |  Web Server        | 10.2.0.5          | Linux        |  1 | 2GB | 
-| Web-02     |  Web Server        | 10.2.0.6          | Linux        |   1 | 2GB |   
-| Web-03     |  Web Server        | 10.2.0.7          | Linux        | 1 | 2GB | 
-| ELK-01     | ELK Stack Server   | 10.10.0.4         | Linux      | 2 | 4GB | 
+| Name     | Role | IP Address | Operating System | vCPU | Memory | Size | 
+|----------|----------|------------|------------------|------------------|------------------|------------------|
+| Jump-Provisioner | Gateway/Ansible Controller  | 10.2.0.4   | Linux  | 1 | 1GB | Standard B1s |
+| Web-01     |  Web Server        | 10.2.0.5          | Linux        |  1 | 2GB | Standard B1ms | 
+| Web-02     |  Web Server        | 10.2.0.6          | Linux        |   1 | 2GB |    Standard B1ms | 
+| Web-03     |  Web Server        | 10.2.0.7          | Linux        | 1 | 2GB |  Standard B1ms | 
+| ELK-01     | ELK Stack Server   | 10.10.0.4         | Linux      | 2 | 4GB | Standard B2ms | 
 
 
 
