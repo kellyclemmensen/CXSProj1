@@ -7,7 +7,7 @@ ELK Stack implementation was build for the purposes of doing investigation into 
 This document describes the environment built and tasks completed, in sequence to fully implement a working environment.
 
 ### Azure Build
-This environment was built using Microsoft Azure cloud hosting. 
+This environment was built using Microsoft Azure cloud hosting. A trial account with a $200 credit was opened and used for this project. 
 
 The table below lists Azure components deployed in the Azure environment and their descriptions. 
 
