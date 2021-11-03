@@ -78,7 +78,7 @@ Diagram location: [Azure Diagram](https://github.com/kellyclemmensen/CXSProj1/bl
 #### Overview
 From dvwa.co.uk - "Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment"
 
-The high level actions and files in the following section detail the steps taken to install the Ansible docker and bring up the DVWA web site on each of the 3 Web servers. 
+The high level actions and files in the following section detail the steps I took to install the Ansible docker and bring up a working DVWA web site on each of the 3 Web servers. 
 
 #### Ansbile Docker Container Installation
 From Wikipedia - "Ansible is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code. It runs on many Unix-like systems, and can configure both Unix-like systems as well as Microsoft Windows."
@@ -101,12 +101,12 @@ Tasks performed from the Jump-Provisioner server to setup the Ansible container.
     - Command - "sudo docker attach CONTAINER_NAME" will attach to the running Ansible container.
 - Verify the Ansible container is running. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleContainerRunning.png)
 
-In order for the Ansible container to have the ability to push out Docker and the DVWA container, SSH keys need to be generated from the Ansible container and used to update each of the Web server virtual machines from the Azure console. 
+In order for the Ansible container to have the ability to push out Docker and the DVWA container, SSH keys need to be generated from the Ansible container, which are then used to update each of the Web server virtual machines from the Azure console. 
 
 These are the tasks performed to replace the existing SSH keys
 - From the Jump-Provisioner server, generate new SSH keys
 - Copy the public Key detail from the generated SSH Key
-- In the Azure portal, navigate to the virtual machine > Reset Password pane. Update the SSH public key information with the new SSH key information you created. Update the virtual machine. Repeat SSH replace tasks for each Web Server. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AzureSSKey.png)
+- In the Azure portal, navigate to the virtual machine > Reset Password pane. Update the SSH public key information with the new SSH key information you created. Update the virtual machine. Repeat SSH replace tasks for each Web Server. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AzureSSHKey.png)
 - Verify SSH access to each Web server from the Ansible container. 
 
 #### DVWA Web VM with Docker Installation
