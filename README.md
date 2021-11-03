@@ -14,7 +14,7 @@
 
 ### Overview
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-ELK Stack implementation was build for the purposes of doing investigation into log and system module activity. This implementation leverages Infrastructure as a Service (IAAS) to build the environment in which DVWA web sites and the ELK stack implement is built on. 
+ELK Stack is implemented for the purposes of doing investigation into log and system module activity. This implementation leverages Infrastructure as a Service (IAAS) to build the environment in which DVWA web sites and the ELK stack implement is built on. 
 
 This document describes the environment built and tasks completed, in sequence to fully implement a working environment.
 
@@ -61,7 +61,7 @@ The Elk server will be used to host the ELK stack. It is important that the size
 
 The machines on the internal network are not exposed to the public Internet. Only the Jump-Provisioner machine can accept connections from the Internet. The load balancer in front of the Web hosts, is configured with a public IP address and access is restricted to a specific source and destination port.
 
-A summary of the access policies in place can be found in the table below.
+A summary of the initial access policies at this stage of the build can be found in the table below.
 
 | Name  | Publicly Accessible  | Allowed IP Addresses  | Port  |
 |---|---|---|---|
@@ -73,7 +73,35 @@ A summary of the access policies in place can be found in the table below.
 Diagram location: [Azure Diagram](https://github.com/kellyclemmensen/CXSProj1/blob/main/Diagrams/Project1-AzureBuildOut.png)
 
 
+### Ansible and DVWA Implementations
+
+#### Overview
+From dvwa.co.uk - "Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment"
+
+The high level actions and files in the following section detail the steps taken to install the Ansible docker and bring up the DVWA web site on each of the 3 Web servers. 
+
+#### Ansbile Docker Container Installation
+From Wikipedia - "Ansible is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code. It runs on many Unix-like systems, and can configure both Unix-like systems as well as Microsoft Windows."
+
+Ansible (Controller) was deployed to the Jump-Provisioner server @ 10.1.0.4. This controller will then be used to install docker and the DVWA container to each of the web servers.
+
+Tasks performed from the Jump-Provisioner server to install the Docker.IO. 
+- Login to the Jump-Provisioner server via SSH
+- Install Docker.IO 
+  - run command "sudo apt update"
+  - run command "sudo apt install docker.io"
+  - Verify the Docker service is running. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleServicerunning.png)
+
+Tasks performed from the Jump-Provisioner server to setup the Ansible container.
+- From the Jump-Provisioner server, run command "sudo docker pull cyberxsecurity/ansible". This command pulls the Ansible container down to the local Docker service
+- Launch the Ansible container and connect to it
+  - docker run -ti cyberxsecurity/ansible:latest bash. Note: This command creates an instance of Ansible container. It only needs to be run once. 
+- Verify the Ansible container is running. [Screen shot]((https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleContainerRunning.png)
+
+
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook may be used to install only certain pieces of it, such as Filebeat.
+
+
 
 Elk Playbook Documentation
   - [ELK Installation Playbook](https://github.com/kellyclemmensen/CyberSecurityBootcamp-Project1/blob/main/install-elk.yml)
