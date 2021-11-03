@@ -1,7 +1,12 @@
 
 ## Automated ELK Stack Deployment
 
-The files in this repository were used to configure the network depicted below. 
+### Overview
+ELK Stack implementation was build for the purposes of doing investigation into log and system module activity. This implementation leverages infrastructure as a Service (IAAS) to build the environment in which the ELK stack is build on. 
+
+This document describes the environment built and tasks completed, in sequence used to achieve a working environment.
+
+
 
 Diagram location: [Azure Diagram](https://github.com/kellyclemmensen/CXSProj1/blob/main/Diagrams/Project1-AzureBuildOut.png)
 
