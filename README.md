@@ -1,11 +1,17 @@
 ## Document Topics
 - Automated ELK Stack Deployment
+  - ELK Configuration
+  - Beats in Use
+  - Machines Being Monitored
 - Cybersecurity Bootcamp Scripts
 - Kibana Investigation Summary
+- Access Policies
+- How to Use the Ansible Build
 
 ## Automated ELK Stack Deployment
 
 ### Overview
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 ELK Stack implementation was build for the purposes of doing investigation into log and system module activity. This implementation leverages Infrastructure as a Service (IAAS) to build the environment in which the ELK stack is build on. 
 
 This document describes the environment built and tasks completed, in sequence to fully implement a working environment.
@@ -17,7 +23,7 @@ This environment was built using Microsoft Azure cloud hosting. A trial account 
 The table below lists Azure components deployed in the Azure environment to support the ELK Stack environment and their descriptions. 
 | Azure Component     | Description |
 |----------|----------|
-| Resource Group |   |
+| Resource Group | A resource group is a container that holds related resources for an Azure solution.  |
 | Virtual Network | Azure Virtual Network (VNet) is the fundamental building block for your private network in Azure. VNet enables many types of Azure resources to securely communicate with each other, the internet, and on-premises networks. |
 | Subnets     |  A subnet is a range of IP addresses in the virtual network.      | 
 | Network Security Groups     |  Network Security Groups provide control over network traffic flowing in and out of your services running in Azure.     | 
@@ -43,31 +49,9 @@ The table below lists the virtual machines built, including roles and specificat
 | Web-03     |  Web Server        | 10.2.0.7          | Linux        | 1 | 2GB |  Standard B1ms | 
 | ELK-01     | ELK Stack Server   | 10.10.0.4         | Linux      | 2 | 4GB | Standard B2ms | 
 
+The Jump-Provisioner virtual machine's role/function is for administration of the virtual machines inside the Azure virtual environment. This machine will allow connections from public sources via SSH protocol. 
 
-
-Diagram location: [Azure Diagram](https://github.com/kellyclemmensen/CXSProj1/blob/main/Diagrams/Project1-AzureBuildOut.png)
-
-
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook may be used to install only certain pieces of it, such as Filebeat.
-
-Elk Playbook Documentation
-  - [ELK Installation Playbook](https://github.com/kellyclemmensen/CyberSecurityBootcamp-Project1/blob/main/install-elk.yml)
-
-This document contains the following details:
-- Description of the Topology
-- Access Policies
-- ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
-- How to Use the Ansible Build
-
-### Description of the Topology
-#### Testing HEader
-
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
-
-The DVWA Web Application is hosted on 3 Web Servers running the Linux Operating System. All web servers are in an Azure Availability Set. 
-This ensures Web Server virtual machines are not hosted in the same location and are patched at different times.
+The 3 Web servers will be used to host the DVWA web site. These servers will be setup in an availability set and a load balancer will be setup in front of these web servers to distribute traffic to each web server virtual machine. 
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - Load balancers serve multiple purposes. 
@@ -75,16 +59,7 @@ Load balancing ensures that the application will be highly available, in additio
   - They verify health state of backend workloads and make sure they are online before sending traffic
 - From the aspect of security, LBs prevent access directly to backend resource, adding a layer of control over access to the backend resource. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the services and system modules. The ELK server is hosted
-on a single virtual machine running the Linux Operating System
-- Filebeat monitors for changes in system modules. 
-- Metricbeat tracks statistics for CPU usage, memory, file system, disk IO, and network IO
-
-The configuration details of each machine may be found below.
-
-
-
-### Access Policies
+#### Network Security Groups | Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
@@ -100,7 +75,36 @@ A summary of the access policies in place can be found in the table below.
 |---|---|---|---|
 |  Jump-Provisioner | Yes  | 73.45.45.20  | 22  |
 | Elk-01  | Yes  | 73.45.45.20  | 5601  | 
-| Web Servers | Yes | 73.45.45.20 | 80 | 
+| Web Servers | Yes | 73.45.45.20 | 80 |
+
+
+Diagram location: [Azure Diagram](https://github.com/kellyclemmensen/CXSProj1/blob/main/Diagrams/Project1-AzureBuildOut.png)
+
+
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook may be used to install only certain pieces of it, such as Filebeat.
+
+Elk Playbook Documentation
+  - [ELK Installation Playbook](https://github.com/kellyclemmensen/CyberSecurityBootcamp-Project1/blob/main/install-elk.yml)
+
+This document contains the following details:
+
+
+### Description of the Topology
+
+
+
+
+
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the services and system modules. The ELK server is hosted
+on a single virtual machine running the Linux Operating System
+- Filebeat monitors for changes in system modules. 
+- Metricbeat tracks statistics for CPU usage, memory, file system, disk IO, and network IO
+
+The configuration details of each machine may be found below.
+
+
+
+ 
 
 ### Elk Configuration
 
