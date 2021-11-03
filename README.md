@@ -13,12 +13,37 @@ This document describes the environment built and tasks completed, in sequence t
 ### Azure Build
 This environment was built using Microsoft Azure cloud hosting. A trial account with a $200 credit was opened and used for this project. 
 
-The table below lists Azure components deployed in the Azure environment and their descriptions. 
+#### Azure Components Table
+The table below lists Azure components deployed in the Azure environment to support the ELK Stack environment and their descriptions. 
 | Azure Component     | Description |
 |----------|----------|
+| Resource Group |   |
 | Virtual Network | Azure Virtual Network (VNet) is the fundamental building block for your private network in Azure. VNet enables many types of Azure resources to securely communicate with each other, the internet, and on-premises networks. |
 | Subnets     |  A subnet is a range of IP addresses in the virtual network.      | 
 | Network Security Groups     |  Network Security Groups provide control over network traffic flowing in and out of your services running in Azure.     | 
+|  Virtual Machines    |    On Demand, scalable computing resources   | 
+|  Load Balancer   |    Load balancer provides high availability by distributing incoming traffic among healthy VMs.  | 
+|  Public IP Address   |    Public IP addresses enable Azure resources to communicate to Internet and public-facing Azure services | 
+|  Availability Set   |    An availability set is a logical grouping of VMs that allows Azure to understand how your application is built to provide for redundancy and availability.   | 
+
+#### Virtual Network and Subnet
+The table below lists the virtual networks and subnets for each created to host the virtual machine environment
+| Virtual Network    | IP Address Space | Subnets | Resource Group | Region | 
+|----------|----------|------------|------------|------------|
+| WUS2-VNET | 10.2.0.0/16  | 10.2.0.0/24 | RedTeam_RG | West US 2 |
+| EUS-VNET | 10.10.0.0/16 | 10.10.0.0/24 | RedTeam_RG | East US |
+
+#### Virtual Machines
+The table below lists the virtual machines built, including descriptions and specifications of each. 
+| Name     | Function | IP Address | Operating System | Role
+|----------|----------|------------|------------------|
+| Jump-Provisioner | Gateway/Ansible Controller  | 10.2.0.4   | Linux            |
+| Web-01     |  Web Server        | 10.2.0.5          | Linux        |
+| Web-02     |  Web Server        | 10.2.0.6          | Linux        |    
+| Web-03     |  Web Server        | 10.2.0.7          | Linux        |
+| ELK-01     | ELK Stack Server   | 10.10.0.4         | Linux      |
+
+
 
 Diagram location: [Azure Diagram](https://github.com/kellyclemmensen/CXSProj1/blob/main/Diagrams/Project1-AzureBuildOut.png)
 
@@ -57,13 +82,7 @@ on a single virtual machine running the Linux Operating System
 
 The configuration details of each machine may be found below.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump-Provisioner | Gateway/Ansible Controller  | 10.2.0.4   | Linux            |
-| Web-01     |  Web Server        | 10.2.0.5          | Linux        |
-| Web-02     |  Web Server        | 10.2.0.6          | Linux        |    
-| Web-03     |  Web Server        | 10.2.0.7          | Linux        |
-| ELK-01     | ELK Stack Server   | 10.10.0.4         | Linux      |
+
 
 ### Access Policies
 
