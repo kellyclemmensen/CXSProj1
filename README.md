@@ -8,7 +8,6 @@
   - Machines Being Monitored
 - Cybersecurity Bootcamp Scripts
 - Kibana Investigation Summary
-- How to Use the Ansible Build
 
 ## Automated ELK Stack Deployment
 
@@ -188,3 +187,13 @@ I installed the following Beats on these machines:
 |  Web-01 | Filebeats, Metricbeats  |
 |  Web-02 | Filebeats, Metricbeats  |
 |  Web-03 | Filebeats, Metricbeats |
+
+## Cybersecurity Bootcamp Scripts
+### Overview
+Below is a list of Bash scripts that I've created through the course of this Cybersecurity Bootcamp and their descriptions
+
+| Script Name  | Script | Script Description|
+|---|---|---|
+|  cleanup.sh |[cleanup.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/cleanup.sh) |  Script that can be used to cleanup .cache directories on the local system |
+|  student_setup.sh | [student_setup.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/student_setup.sh)| creates directories, copies files, and changes file and directory permissions  |
+|  for_loop.sh | [for_loop.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/for_loop.sh)| creates directories, copies files, and changes file and directory permissions  |
