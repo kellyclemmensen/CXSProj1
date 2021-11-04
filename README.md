@@ -175,7 +175,7 @@ These Beats allow us to collect the following information from each machine:
 - Metricbeat retrieves metric by periodically interrogating the host system. Metricbeat collects statistic infomration about system services. e.g. CPU and memory usage. 
 
 The following beats playbooks and configuration files were created and executed to install filebeats and metricbeats onto each of the web servers. 
-- [Filebeats Playbook](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/filebeat.yml) [Filebeats Configuration File](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/filebeat.yml)
+- [Filebeats Playbook](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/filebeat.yml) | [Filebeats Configuration File](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/filebeat.yml)
 
 This ELK server is configured to monitor the following machines:
 | Machine Name  | IP Address|
