@@ -15,7 +15,7 @@
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 ELK Stack is implemented for the purposes of doing investigation into log and system module activity. This implementation leverages Infrastructure as a Service (IAAS) to build the environment in which DVWA web sites and the ELK stack implementation is built on. 
 
-This document describes the environment built and tasks completed, in sequence to fully implement a working environment.
+This document describes the environment built and tasks completed, in sequence, to fully implement a working environment.
 
 ### Azure Build
 This environment was built using Microsoft Azure cloud hosting. A trial account with a $200 credit was opened and used for this project. 
