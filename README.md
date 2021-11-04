@@ -159,9 +159,22 @@ The playbook implements the following tasks:
 
 Elk Playbook Documentation - [ELK Installation Playbook](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/install-elk.yml)
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance. - [Docker PS Output image after Docker installation](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/DockerPS.png)
+### Using the Playbook
+In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
-### Target Machines & Beats
+SSH into the control node and follow the steps below:
+- Copy the install-elk.yml file to the /etc/ansible directory inside the ansible docker container.
+- Update the hosts file to include:
+  - A section labeled ELK to identity the ELK servers. This will be used to distinguish between the DVWA web servers and the new ELK installation. 
+  - Add the ELK server IP address as well as the Python Interpreter Path. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/ElkHost.png)
+  - The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance. - [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/DockerPS.png)
+- Run the playbook. After the playbook has completed successfully, open a web browser and navigate to the exteral IP address of the ELK server. In this instance, http://52.191.115.231:5601 to verify the Kibana dashboard has loaded. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/KibanaWorking.png)
+
+### Beats
+These Beats allow us to collect the following information from each machine:
+- Filebeat harvests and reads logfiles in configured locations and ships new log information to the ELK server
+- Metricbeat retrieves metric by periodically interrogating the host system. Metricbeat collects statistic infomration about system services. e.g. CPU and memory usage. 
+
 This ELK server is configured to monitor the following machines:
 | Machine Name  | IP Address|
 |---|---|
@@ -175,19 +188,3 @@ I installed the following Beats on these machines:
 |  Web-01 | Filebeats, Metricbeats  |
 |  Web-02 | Filebeats, Metricbeats  |
 |  Web-03 | Filebeats, Metricbeats |
-
-These Beats allow us to collect the following information from each machine:
-- Filebeat harvests and reads logfiles in configured locations and ships new log information to the ELK server
-- Metricbeat retrieves metric by periodically interrogating the host system. Metricbeat collects statistic infomration about system services. e.g. CPU and memory usage. 
-
-### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
-
-SSH into the control node and follow the steps below:
-- Copy the install-elk.yml file to the /etc/ansible directory inside the ansible docker container.
-- Update the hosts file to include:
-  - A section labeled ELK to identity the ELK servers. This will be used to distinguish between the DVWA web servers and the new ELK installation. 
-  - The ELK server IP address as well as the Python Interpreter Path
-- Run the playbook. After the playbook has completed successfully, open a web browser and navigate to http://52.191.115.231:5601 to verify the Kibana dashboard has loaded. 
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
