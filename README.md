@@ -121,13 +121,14 @@ Tasks performed:
   - [Screen shot of Ansible hosts file WebServers section](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsibleHosts.png)
 - Verified that the Ansible "controller" can communicate and access each Web server without issue. [ Ansible Success](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/AnsiblePing.png)
 
-Next I created a YAML playbook that was used to push out the Docker Web VM to each of the Web servers. This YML playbook performed a few tasks. 
+Next I created a YAML playbook that was used to push out the Docker Web VM to each of the Web servers. This YML playbook performed a few tasks. [Pentest.yml Playbook file](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/pentest.yml). This playbook performed the following tasks. 
 - Installed the Docker.IO on each Web server
 - Installed Python on each server
 - Downloaded and installed Docker Web VM container
   - Published the Docker Web VM on port 80
 - Set the Docker service to enabled. 
-- [Pentest.yml Playbook file](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/pentest.yml)
+
+After running the Ansible playbook, the DVWA is successfully deployed. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/PentestPlaybook.png). I also confirmed the DVWA web site was running by using a curl command against the IP address of each Web host. [Curl Command Confirmation](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/CurlConfirm.png)
 
 
 
