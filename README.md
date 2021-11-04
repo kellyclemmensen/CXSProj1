@@ -153,15 +153,13 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - Docker and Python Installation/Configuration is performed. 
-- Virtual machine memory is increased and confiured to use all available memory
+- Virtual machine memory is increased and configured to use all available memory
 - An ELK container is downloaded and launched. The container restart policy is set to always start, and ports are published
 - The Docker service is set to start on virtual machine boot
 
-Elk Playbook Documentation
-  - [ELK Installation Playbook](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/install-elk.yml)
+Elk Playbook Documentation - [ELK Installation Playbook](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/install-elk.yml)
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-- [Docker PS Output image after Docker installation](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/DockerPS.png)
+The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance. - [Docker PS Output image after Docker installation](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/DockerPS.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
