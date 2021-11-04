@@ -61,7 +61,7 @@ The Elk server will be used to host the ELK stack. It is important that the size
 
 The machines on the internal network are not exposed to the public Internet. Only the Jump-Provisioner machine can accept connections from the Internet. The load balancer in front of the Web hosts, is configured with a public IP address and access is restricted to a specific source and destination port.
 
-A summary of the initial access policies at this stage of the build can be found in the table below.
+A summary of the access policies of the build can be found in the table below.
 
 | Name  | Publicly Accessible  | Allowed IP Addresses  | Port  |
 |---|---|---|---|
