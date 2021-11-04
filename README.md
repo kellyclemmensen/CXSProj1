@@ -176,7 +176,7 @@ These Beats allow us to collect the following information from each machine:
 
 The following beats playbooks and configuration files were created and executed to install filebeats and metricbeats onto each of the web servers. 
 - [Filebeats Playbook](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/filebeat.yml) | [Filebeats Configuration File](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/filebeat-config.yml) Configuration files were edited to reflect the IP address of the ELK server. 
-- [Metricbeats Playbook](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/metricbeat.yml) | [Metricbeats Configuration File](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/metricbeat-config.yml) Configuration files were edited to reflect the IP address of the ELK server. 
+- [Metricbeats Playbook](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/metricbeats.yml) | [Metricbeats Configuration File](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/metricbeat-config.yml) Configuration files were edited to reflect the IP address of the ELK server. 
 
 This ELK server is configured to monitor the following machines:
 | Machine Name  | IP Address|
