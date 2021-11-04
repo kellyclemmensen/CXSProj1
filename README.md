@@ -201,3 +201,16 @@ Below is a list of some of
 |  sys_info.sh | [sys_info.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/sys_info.sh)| Script that collects information about the local machine and writes output to a text file|
 |  useful_loops.sh | [useful_loops.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/useful_loops.sh)| Script that searches for installed packages|
 |  DVWAContainerStart.sh | [DVWAContainerStart.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/DVWAContainerStart.sh)| Script that is run from the Ansile controller. It connects to eah Web Server and starts the DVWA container|
+
+## Kibana Investigation Summary
+This investigation was conductd using the Kibana sample data loaded up on the Kibana dashboard. 
+
+I used several methods to filter the data using various duration samples to determine unique visitors from various countries. I filtered the data to determine the visitors endpoint Operating Systems. I filtered the data to show what types of errors users received and the most common ones. 
+
+The investigation got interesting when I filtered the data to show the last 7 days. I determined the types of downloaded files and researched the descriptions of each downloaded file. 
+
+Taking a closer look at the data in the unique visitors and average bytes chart, I looked at the time of day with the most amount of bytes activity. What was interesting here was that the number of visitors in that time window was a single visit. The single visit generated more bytes activity than other times of day with multiple unique visitors. 
+
+Looking closer at this activity I determined that this single visitor activity originated from the United States. A deb file was downloaded and the HTTP response was 200 (successful). 
+
+This activity appears to be someone downloading and installing a package. 
