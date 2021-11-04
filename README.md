@@ -190,7 +190,8 @@ I installed the following Beats on these machines:
 
 ## Cybersecurity Bootcamp Scripts
 ### Overview
-Below is a list of Bash scripts that I've created through the course of this Cybersecurity Bootcamp and their descriptions
+Below is a list of some of
+ Bash scripts that I've created through the course of this Cybersecurity Bootcamp and their descriptions
 
 | Script Name  | Script | Script Description|
 |---|---|---|
