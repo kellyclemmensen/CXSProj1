@@ -130,11 +130,11 @@ Next I created a YAML playbook that was used to push out the Docker Web VM to ea
 
 After running the Ansible playbook, the DVWA is successfully deployed. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/PentestPlaybook.png). I also confirmed the DVWA web site was running by logging into each of the Web servers and using a curl command against the local host. [Curl Command Confirmation](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/CurlConfirm.png)
 
-## ELK Implementation
+### ELK Implementation
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook may be used to install only certain pieces of it, such as Filebeat.
 
-### Description of the Topology
+#### Description of the Topology
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the services and system modules. The ELK server is hosted
 on a single virtual machine running the Linux Operating System
@@ -143,7 +143,7 @@ on a single virtual machine running the Linux Operating System
 
 The configuration details of each machine may be found below.
 
-### Elk Configuration
+#### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - Automation has many advantages over manual configuration
@@ -159,7 +159,7 @@ The playbook implements the following tasks:
 
 Elk Playbook Documentation - [ELK Installation Playbook](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/install-elk.yml)
 
-### Using the Playbook
+#### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
@@ -170,7 +170,7 @@ SSH into the control node and follow the steps below:
   - The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance. - [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/DockerPS.png)
 - Run the playbook. After the playbook has completed successfully, open a web browser and navigate to the exteral IP address of the ELK server. In this instance, http://52.191.115.231:5601 to verify the Kibana dashboard has loaded. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/KibanaWorking.png)
 
-### Beats
+#### Beats
 These Beats allow us to collect the following information from each machine:
 - Filebeat harvests and reads logfiles in configured locations and ships new log information to the ELK server
 - Metricbeat retrieves metric by periodically interrogating the host system. Metricbeat collects statistic infomration about system services. e.g. CPU and memory usage. 
