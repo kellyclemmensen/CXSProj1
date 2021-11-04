@@ -128,28 +128,13 @@ Next I created a YAML playbook that was used to push out the Docker Web VM to ea
   - Published the Docker Web VM on port 80
 - Set the Docker service to enabled. 
 
-After running the Ansible playbook, the DVWA is successfully deployed. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/PentestPlaybook.png). I also confirmed the DVWA web site was running by using a curl command against the IP address of each Web host. [Curl Command Confirmation](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/CurlConfirm.png)
+After running the Ansible playbook, the DVWA is successfully deployed. [Screen shot](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/PentestPlaybook.png). I also confirmed the DVWA web site was running by logging into each of the Web servers and using a curl command against the local host. [Curl Command Confirmation](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/CurlConfirm.png)
 
-
-
+## ELK Implementation
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook may be used to install only certain pieces of it, such as Filebeat.
 
-
-
-Elk Playbook Documentation
-  - [ELK Installation Playbook](https://github.com/kellyclemmensen/CyberSecurityBootcamp-Project1/blob/main/install-elk.yml)
-
-This document contains the following details:
-
-
 ### Description of the Topology
-
-
-Web hosts within the network can only be accessed by the Ansible Controller.
-- Ansible Controller running on the Jump-Provisioner machine @ 10.2.0.4
-
-
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the services and system modules. The ELK server is hosted
 on a single virtual machine running the Linux Operating System
@@ -157,10 +142,6 @@ on a single virtual machine running the Linux Operating System
 - Metricbeat tracks statistics for CPU usage, memory, file system, disk IO, and network IO
 
 The configuration details of each machine may be found below.
-
-
-
- 
 
 ### Elk Configuration
 
@@ -176,8 +157,11 @@ The playbook implements the following tasks:
 - An ELK container is downloaded and launched. The container restart policy is set to always start, and ports are published
 - The Docker service is set to start on virtual machine boot
 
+Elk Playbook Documentation
+  - [ELK Installation Playbook](https://github.com/kellyclemmensen/CXSProj1/blob/main/YAML/install-elk.yml)
+
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-- [Docker PS Output image after Docker installation](https://github.com/kellyclemmensen/CyberSecurityBootcamp-Project1/blob/main/DockerPSOutput.png)
+- [Docker PS Output image after Docker installation](https://github.com/kellyclemmensen/CXSProj1/blob/main/Images/DockerPS.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -187,7 +171,7 @@ This ELK server is configured to monitor the following machines:
 |  Web-02 | 10.2.0.6  |
 |  Web-03 | 10.2.0.7  |
 
-We have installed the following Beats on these machines:
+I installed the following Beats on these machines:
 | Machine Name  | Beats Installed|
 |---|---|
 |  Web-01 | Filebeats, Metricbeats  |
