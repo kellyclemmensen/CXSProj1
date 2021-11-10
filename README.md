@@ -200,7 +200,7 @@ Below is a list of some of
 | Script Name  | Script | Script Description|
 |---|---|---|
 |  cleanup.sh |[cleanup.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/cleanup.sh) |  Script that can be used to cleanup .cache directories on the local system |
-|  student_setup.sh | [student_setup.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/student_setup.sh)| creates directories, copies files, and changes file and directory permissions  |
+|  student_setup.sh | [student_setup.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/Student_setup.sh)| creates directories, copies files, and changes file and directory permissions  |
 |  for_loop.sh | [for_loop.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/for_loop.sh)| creates and populates a variable array, then loops through all the array to find specific records. Writes output to screen |
 |  sys_info.sh | [sys_info.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/sys_info.sh)| Script that collects information about the local machine and writes output to a text file|
 |  useful_loops.sh | [useful_loops.sh](https://github.com/kellyclemmensen/CXSProj1/blob/main/Scripts/useful_loops.sh)| Script that searches for installed packages|
